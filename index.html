@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Survey - Abacus Energy Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <!-- Replace 'logo-placeholder.png' with your actual logo file -->
+            <img src="logo-placeholder.png" alt="Abacus Energy Solutions" class="logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div class="logo-text" style="display: none;">ABACUS ENERGY SOLUTIONS</div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="survey-container">
+                <div class="survey-header">
+                    <h1>See if you qualify for up to £1,000 off an additional GivEnergy Battery.</h1>
+                    <p>Answer a few quick questions to see if you qualify.</p>
+                    <div class="promotion-banner">
+                        <p><strong>Limited Time Offer:</strong> Get up to £1,000 off an additional GivEnergy Battery!</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <p class="progress-text"><span id="currentStep">1</span> of <span id="totalSteps">5</span></p>
+                </div>
+
+                <form id="surveyForm">
+                    <!-- Question 1: Battery Brand -->
+                    <div class="question active" data-question="1">
+                        <h2>What battery brand do you currently have?</h2>
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <label for="batteryBrand">Battery Brand *</label>
+                                <select id="batteryBrand" name="batteryBrand" required>
+                                    <option value="">Please select...</option>
+                                    <option value="GivEnergy">GivEnergy</option>
+                                    <option value="Fox ESS">Fox ESS</option>
+                                    <option value="Tesla">Tesla</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: Battery Size -->
+                    <div class="question" data-question="2">
+                        <h2>What is your battery size?</h2>
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <label for="batterySize">Battery Size *</label>
+                                <select id="batterySize" name="batterySize" required>
+                                    <option value="">Please select...</option>
+                                    <option value="5kw">5kw</option>
+                                    <option value="6kw">6kw</option>
+                                    <option value="7kw">7kw</option>
+                                    <option value="8kw">8kw</option>
+                                    <option value="9kw">9kw</option>
+                                    <option value="10kw">10kw</option>
+                                    <option value="11kw">11kw</option>
+                                    <option value="12kw">12kw</option>
+                                    <option value="13kw">13kw</option>
+                                    <option value="14kw">14kw</option>
+                                    <option value="15kw">15kw</option>
+                                    <option value="16kw">16kw</option>
+                                    <option value="17kw">17kw</option>
+                                    <option value="18kw">18kw</option>
+                                    <option value="19kw">19kw</option>
+                                    <option value="20kw">20kw</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Battery Type -->
+                    <div class="question" data-question="3">
+                        <h2>What is your battery type?</h2>
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <label for="batteryType">Battery Type *</label>
+                                <select id="batteryType" name="batteryType" required>
+                                    <option value="">Please select...</option>
+                                    <option value="AC Coupled">AC Coupled</option>
+                                    <option value="All-in-One">All-in-One</option>
+                                    <option value="Hybrid">Hybrid</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4: Solar -->
+                    <div class="question" data-question="4">
+                        <h2>Have you got Solar?</h2>
+                        <div class="options">
+                            <label class="option-card">
+                                <input type="radio" name="hasSolar" value="Yes" required>
+                                <span>Yes</span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="hasSolar" value="No" required>
+                                <span>No</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5: Contact Details -->
+                    <div class="question" data-question="5">
+                        <h2>Your Contact Details</h2>
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">UK Telephone Number *</label>
+                                <input type="tel" id="telephone" name="telephone" pattern="^(\+44\s?7\d{3}|\(?07\d{3}\)?)\s?\d{3}\s?\d{3}$|^(\+44\s?[1-9]\d{2,4}|\(?0[1-9]\d{2,4}\)?)\s?\d{3,4}\s?\d{3,4}$" placeholder="e.g., 07XXX XXXXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="postcode">Post Code *</label>
+                                <input type="text" id="postcode" name="postcode" pattern="^([A-Z]{1,2}\d{1,2}[A-Z]?)\s?(\d[A-Z]{2})$" placeholder="e.g., SW1A 1AA" required>
+                                <small>Please enter a valid UK postcode</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit</button>
+                    </div>
+                </form>
+
+                <!-- Thank You Message -->
+                <div class="thank-you" id="thankYou" style="display: none;">
+                    <h2>Thank You!</h2>
+                    <p>We've received your information and will be in touch shortly to discuss your battery upgrade.</p>
+                    <p>One of our expert team members will contact you within 24 hours.</p>
+                    <a href="https://abacusenergysolutions.co.uk/" class="btn btn-primary">Return to Website</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Abacus Energy Solutions. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="https://abacusenergysolutions.co.uk/privacy-policy">Privacy Policy</a>
+                <a href="https://abacusenergysolutions.co.uk/disclaimer">Disclaimer</a>
+                <a href="https://abacusenergysolutions.co.uk/terms-of-use">Terms Of Use</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
